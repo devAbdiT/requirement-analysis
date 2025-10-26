@@ -190,3 +190,96 @@ Use Case Diagrams are a visual representation of the functional requirements of 
 
 ### Booking System Use Case Diagram
 ![ALX Booking Use Case Diagram](alx-booking-uc.png)
+
+## Acceptance Criteria
+
+### What are Acceptance Criteria?
+
+Acceptance Criteria are predefined conditions that a software product must meet to be accepted by stakeholders, users, or the product owner. They define the boundaries of a user story and are used to confirm when a story is completed and working as intended.
+
+### Importance of Acceptance Criteria in Requirement Analysis
+
+**1. Clear Definition of Done**
+- Provides unambiguous requirements for developers
+- Eliminates ambiguity about what constitutes a completed feature
+- Sets clear expectations for all team members
+
+**2. Quality Assurance Foundation**
+- Serves as the basis for test case creation
+- Ensures comprehensive test coverage
+- Helps QA teams verify feature functionality
+
+**3. Stakeholder Alignment**
+- Bridges communication gaps between technical and non-technical stakeholders
+- Ensures everyone has the same understanding of requirements
+- Facilitates user story validation and sign-off
+
+**4. Scope Management**
+- Prevents scope creep by clearly defining feature boundaries
+- Helps prioritize features based on must-have vs. nice-to-have criteria
+- Provides reference points for requirement changes
+
+**5. Development Guidance**
+- Gives developers clear implementation targets
+- Reduces rework by catching misunderstandings early
+- Supports behavior-driven development (BDD) practices
+
+### Example: Acceptance Criteria for Checkout Feature
+
+**User Story:** 
+*As a registered user, I want to complete my booking payment securely so that I can confirm my reservation.*
+
+**Acceptance Criteria:**
+
+**Scenario: Successful Booking Payment**
+- **Given** the user has selected a property and dates
+- **And** the user is logged into their account
+- **When** the user proceeds to checkout
+- **Then** the system should display a summary of booking details
+- **And** the system should show the total amount with tax breakdown
+- **And** the user should be able to select a payment method
+
+**Scenario: Payment Method Selection**
+- **Given** the user is on the checkout page
+- **When** the user views payment options
+- **Then** the system should display available payment methods (credit card, debit card, digital wallet)
+- **And** each payment method should show supported card types or wallet options
+
+**Scenario: Credit Card Payment Processing**
+- **Given** the user selects credit card payment
+- **When** the user enters valid card details (number, expiry, CVV)
+- **And** clicks "Pay Now"
+- **Then** the system should validate card format in real-time
+- **And** the system should process payment through secure gateway
+- **And** upon successful payment, show confirmation page with booking ID
+- **And** send confirmation email to registered email address
+
+**Scenario: Payment Failure Handling**
+- **Given** the user submits payment
+- **When** the payment gateway declines the transaction
+- **Then** the system should display a user-friendly error message
+- **And** suggest alternative payment methods
+- **And** preserve the booking details for retry
+- **And** not charge the user's account
+
+**Scenario: Booking Hold Mechanism**
+- **Given** a user starts the checkout process
+- **When** the user is on the payment page
+- **Then** the system should temporarily hold the selected dates
+- **And** release the hold after 15 minutes of inactivity
+- **And** notify the user if dates become unavailable during checkout
+
+**Scenario: Security and Validation**
+- **Given** any checkout interaction
+- **When** processing sensitive data
+- **Then** all data transmission should use HTTPS encryption
+- **And** card details should not be stored in application logs
+- **And** the system should validate all input fields for format and completeness
+
+**Scenario: Mobile Responsiveness**
+- **Given** the user accesses checkout on mobile device
+- **When** viewing the checkout interface
+- **Then** all form fields should be easily tappable
+- **And** the payment flow should require minimal scrolling
+- **And** auto-complete should be enabled for address fields
+
